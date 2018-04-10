@@ -1,7 +1,7 @@
 # Project 6 Capstone
 
 Introduction: 
-This project uses RandomForest Classifier, Logistic Regression, and Neural Networks by using Keras to predict Amazon.com customers book review ratings that ranges from 1 to 5 as a target and use sentiment analysis from customers reviews for features. 
+This project uses RandomForest Classifier, Logistic Regression, and Neural Networks by using Keras to predict Amazon.com customers book review ratings that range from 1 to 5 as a target and use sentiment analysis from customers reviews for features. 
 
 Data Cleaning:
 
