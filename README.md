@@ -1,4 +1,4 @@
-# Project 6 Capstone
+# Project 6 Capstone: Predicting the Amazon's Product Ratings Using Customer's Sentiment Analysis.
 
 **Introduction:** 
 This project uses RandomForest Classifier, Logistic Regression, and Neural Networks by using Keras to predict Amazon.com customers book review ratings that range from 1 to 5 as a target and use sentiment analysis from customers reviews for features. 
