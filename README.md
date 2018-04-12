@@ -1,7 +1,7 @@
 # Project 6 Capstone: Predicting the Amazon's Product Ratings Using Customer's Sentiment Analysis.
 
 **Introduction:** 
-This project uses RandomForest Classifier, Logistic Regression, and Neural Networks by using Keras to predict Amazon.com customers book review ratings that range from 1 to 5 as a target and use sentiment analysis from customers reviews for features. 
+This project is a supervised training that uses RandomForest Classifier, Logistic Regression, and Neural Networks by using Keras to predict Amazon.com customers book review ratings that range from 1 to 5. The ratings are used as a target variable and sentiment analysis that ranges from negative to positive from Amazon's customer reviews as features. 
 
 **Data Cleaning:**
 The dataset for this project was collected from the University of California San Diego (UCSD) website, http://jmcauley.ucsd.edu/data/amazon/, which contains Amazon customer book reviews and metadata from May 1996 - July 2014. The overall dataset set was cleaned by dropping the unnecessary columns and missing data since the total missing data was very small compared to an overall dataset. In addition, feature engineering was performed by converting the helpful column into a binary classification, helpful and not helpful reviews in one column as 1 or 0. Moreover, book categories were gathered from Amazon.com by building a web scraper using a Selenium library web driver. Lastly, columns that contain customers reviews were cleaned by using the nltk library with additional stopwords that relates to the book reviews such as "book, books, read, and reads".  
