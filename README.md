@@ -1,14 +1,12 @@
-# Project 6 Capstone
+# Project 6 Capstone: Predicting the Amazon's Product Ratings Using Customer's Sentiment Analysis.
 
-Introduction: 
-This project uses RandomForest Classifier, Logistic Regression, and Neural Networks by using Keras to predict Amazon.com customers book review ratings that ranges from 1 to 5 as a target and use sentiment analysis from customers reviews for features. 
+**Introduction:** 
+This project is a supervised training that uses RandomForest Classifier, Logistic Regression, and Neural Networks by using Keras to predict Amazon.com customers book review ratings that range from 1 to 5. The ratings are used as a target variable and sentiment analysis that ranges from negative to positive from Amazon's customer reviews as features. 
 
-Data Cleaning:
-
+**Data Cleaning:**
 The dataset for this project was collected from the University of California San Diego (UCSD) website, http://jmcauley.ucsd.edu/data/amazon/, which contains Amazon customer book reviews and metadata from May 1996 - July 2014. The overall dataset set was cleaned by dropping the unnecessary columns and missing data since the total missing data was very small compared to an overall dataset. In addition, feature engineering was performed by converting the helpful column into a binary classification, helpful and not helpful reviews in one column as 1 or 0. Moreover, book categories were gathered from Amazon.com by building a web scraper using a Selenium library web driver. Lastly, columns that contain customers reviews were cleaned by using the nltk library with additional stopwords that relates to the book reviews such as "book, books, read, and reads".  
 
-Exploratory Data Analysis:
-
+**Exploratory Data Analysis:**
 In overall, the Amazon book customers are willing to give a higher rating than a low rating, customers are willing to write a longer review as rating increases, and customers find higher rating reviews to be more helpful than not helpful. 
 To see what words drive the high rating and low rating, by using the CountVectorizer and the n-gram range, the most frequently occurring unigram words in reviews were "one, story, like, would, love, good, characters, really, great, time, series, best, fun, and excellent".  In addition, for bigrams, "can't wait, well written, highly recommend, even though, really enjoyed, would recommend, main character, looking forward, love story, story line, great story, another great, good story, one best, couldn't put, great series, five stars, page turner" Moreover, for trigrams, "can't wait next, would recommend anyone, look forward reading, cant wait see, exchange honest review,  looking forward reading, wait next one, cobra cobra cobra, world war ii, highly recommend anyone, keeps getting better, ove love love, cant wait next, start new series, another great story, good story line, gets better better, loved loved loved, real page turner, wow wow wow". As n-gram increases, it forms a sentence like structure and it is easier to understand then just looking at unigram or one word.
 
@@ -16,10 +14,8 @@ On the other hand, lowest rating unigram shows "nothing, boring, don't, really, 
 
 Obviously, as rating decreases, reviewers use less positive words and uses more negative words. However, instead of looking at the words by rating, the library TextBlob can generate sentiment analysis by categorizing the positive polarity or negative polarity that ranges from -1 to 1, and low subjectivity or high subjectivity level from 0 to 1, all from the text data. Based on the sentiment analysis, Amazon book reviews contains more positive sentiment reviews than negative sentiment reviews and reviews contains more subjectivity than objectivity.  Lastly,  book categories like Literature & Fiction, Romance, Christian Books & Bibles have the highest polarity and subjectivity level and Toys & Games, Law, Medical Books have the lowest polarity and subjectivity level. The result shows that the book categories that are more factual or non-fiction types of book categories shows less polarity and subjectivity level. Based on this result, text review and summary review columns have the strongest correlation with the rating, then helpful review, text subjectivity and summary subjectivity have the least correlation.
 
-Models:
-
+**Models:**
 The baseline to overcome is 55%. Out of all the models (RandomForest Classification, Logistic Regression, and Neural Network using Keras), the neural network outperformed baseline and other models with 82% accuracy score on the test dataset. The neural network uses sentiment analysis as features (text review, summary review, text subjectivity, summary subjectivity) and use label encoder to convert the target value (rating) to a binary classification problem, high rating or low rating (0 to 1). The neural network model has 3 hidden layers with relu activation function with random dropouts 50% in each layers. The output layer uses softmax since it is a classification problem. The model compiler uses binary cross-entropy as a loss function, Adam optimizer, and accuracy metrics with an early stop to avoid exhaustive training. Lastly, instead of using sentiment analysis as the only features, by using the actual text data with RandomForest Classification (text review and summary review as features), the score of this test did not outperform neural network that uses sentiment analysis as features.
 
-Conclusion:
-
+**Conclusion:**
 The product ratings can be predicted based on the customer's overall sentiment level on the reviews instead of focusing on the unique words. However, unique words can be used as a great tool to understand customers behavior by the book titles, book contents or categories. If the company can predict the customers rating based on the customer reviews, the company can decide which products to increase in their inventory since customers are most likely to purchase the high rating and positive review products over the low rating and negative products. Therefore, by understanding the customer's behavior through sentiment analysis, it can change the executive decision on the business. 
